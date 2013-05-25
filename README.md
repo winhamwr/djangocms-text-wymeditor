@@ -7,7 +7,8 @@ django CMS before version 3.0 included a text editor plugin, with options to use
 
 That has been removed from django CMS 3. Users are now expected to install their own text plugin.
 
-djangocms-text-wymeditor provides a WYMEditor-based text editing plugin.
+djangocms-text-wymeditor provides a WYMEditor-based text editing plugin, along the lines of 
+https://github.com/divio/djangocms-text-ckeditor
 
 In development! Not working!
 ----------------------------
