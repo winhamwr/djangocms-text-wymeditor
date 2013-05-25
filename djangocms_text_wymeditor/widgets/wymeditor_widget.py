@@ -1,26 +1,27 @@
 from djangocms_text_wymeditor import settings as text_settings
-from cms.utils import cms_static_url
 from django.conf import settings
 from django.forms import Textarea
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 from django.utils.translation.trans_real import get_language
-
+from django.conf import settings
 
 class WYMEditor(Textarea):
     class Media:
-        js = [cms_static_url(path) for path in (
-            'wymeditor/jquery.wymeditor.js',
-            'wymeditor/plugins/resizable/jquery.wymeditor.resizable.js',
-            'js/wymeditor.placeholdereditor.js',
-            'js/libs/jquery.ui.core.js',
-            'js/placeholder_editor_registry.js',
-        )]
-        css = {
-            'all': [cms_static_url(path) for path in (
-                        'css/jquery/cupertino/jquery-ui.css',
-                    )],
-        }
+        js = [
+            settings.STATIC_URL + 'wymeditor/jquery.wymeditor.min.js',
+            # cms_static_url(path) for path in (
+            # 'wymeditor/jquery.wymeditor.min.js',
+            # 'wymeditor/plugins/resizable/jquery.wymeditor.resizable.js',
+            # 'js/wymeditor.placeholdereditor.js',
+            # 'js/libs/jquery.ui.core.js',
+            # 'js/placeholder_editor_registry.js',
+        ]
+        # css = {
+        #     'all': [cms_static_url(path) for path in (
+        #                 'css/jquery/cupertino/jquery-ui.css',
+        #             )],
+        # }
 
     def __init__(self, attrs=None, installed_plugins=None):
         """
