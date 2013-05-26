@@ -9,7 +9,9 @@ from django.conf import settings
 class WYMEditor(Textarea):
     class Media:
         js = [
-            settings.STATIC_URL + 'wymeditor/jquery.wymeditor.min.js',
+            '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',  #jQuery
+            settings.STATIC_URL + 'jquery/jquery-ui-1.8.11.custom.min.js', # jQuery UI
+            settings.STATIC_URL + 'wymeditor/jquery.wymeditor.min.js', # WYM
             # cms_static_url(path) for path in (
             # 'wymeditor/jquery.wymeditor.min.js',
             # 'wymeditor/plugins/resizable/jquery.wymeditor.resizable.js',
