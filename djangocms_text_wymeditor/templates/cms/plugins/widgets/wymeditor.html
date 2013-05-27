@@ -13,7 +13,11 @@ var editPluginPopupCallbacks = {};
 		scrollTo(0, 0);
 		
 		// init wysiwyg
-		$('#id_{{ name }}').wymeditor({
+		$('#id_{{ name }}').wymeditor({ 
+		    
+		    // not sure why this is required
+		    basePath: '/static/wymeditor/',
+		    
 			lang: '{{ language }}',
 			skin: 'django',
 			skinPath: "{{ STATIC_URL }}cms/js/wymeditor/skins/django/",

@@ -20,17 +20,6 @@ class TextPlugin(CMSPluginBase):
     render_template = "cms/plugins/text.html"
     change_form_template = "cms/plugins/text_plugin_change_form.html"
 
-    def get_editor_widget(self, request, plugins):
-        """
-        Returns the Django form Widget to be used for
-        the text area
-        """
-        # if USE_TINYMCE and "tinymce" in settings.INSTALLED_APPS:
-        #     from cms.plugins.text.widgets.tinymce_widget import TinyMCEEditor
-        #     return TinyMCEEditor(installed_plugins=plugins)
-        # else:
-        #     return WYMEditor(installed_plugins=plugins)
-        return WYMEditor(installed_plugins=plugins)
         
     def get_form_class(self, request, plugins):
         """
@@ -39,7 +28,7 @@ class TextPlugin(CMSPluginBase):
         # We avoid mutating the Form declared above by subclassing
         class TextPluginForm(self.form):
             pass
-        widget = self.get_editor_widget(request, plugins)
+        widget = WYMEditor(installed_plugins=plugins)
         TextPluginForm.declared_fields["body"] = CharField(widget=widget, required=False)
         return TextPluginForm
 

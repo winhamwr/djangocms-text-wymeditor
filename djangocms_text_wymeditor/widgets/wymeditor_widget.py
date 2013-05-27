@@ -9,12 +9,13 @@ from django.conf import settings
 class WYMEditor(Textarea):
     class Media:
         js = [
-            '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',  #jQuery
-            settings.STATIC_URL + 'jquery/jquery-ui-1.8.11.custom.min.js', # jQuery UI
-            settings.STATIC_URL + 'wymeditor/jquery.wymeditor.min.js', # WYM
+            '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js',  #jQuery
+            # settings.STATIC_URL + 'jquery/jquery-ui-1.8.11.custom.min.js', # jQuery UI
+            settings.STATIC_URL + 'wymeditor/jquery.wymeditor.js', # WYM
             # cms_static_url(path) for path in (
             # 'wymeditor/jquery.wymeditor.min.js',
             # 'wymeditor/plugins/resizable/jquery.wymeditor.resizable.js',
+            settings.STATIC_URL + 'wymeditor/wymeditor.placeholdereditor.js', # WYM
             # 'js/wymeditor.placeholdereditor.js',
             # 'js/libs/jquery.ui.core.js',
             # 'js/placeholder_editor_registry.js',
@@ -53,9 +54,11 @@ class WYMEditor(Textarea):
             'WYM_STYLESHEET': mark_safe(text_settings.WYM_STYLESHEET),
             'installed_plugins': self.installed_plugins,
         }
+
         return mark_safe(render_to_string(
             'cms/plugins/widgets/wymeditor.html', context))
 
     def render(self, name, value, attrs=None):
         return self.render_textarea(name, value, attrs) + \
             self.render_additions(name, value, attrs)
+

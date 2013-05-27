@@ -338,6 +338,11 @@ jQuery.extend(WYMeditor, {
         this._options.iframeBasePath = this._options.iframeBasePath ||
             this._options.basePath + WYMeditor.IFRAME_DEFAULT;
 
+
+
+        // window.alert(this._options.name);
+
+
         // Initialize the editor instance
         this.init();
     }
