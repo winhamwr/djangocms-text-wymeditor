@@ -16,6 +16,8 @@ class WYMEditor(Textarea):
             # 'wymeditor/jquery.wymeditor.min.js',
             # 'wymeditor/plugins/resizable/jquery.wymeditor.resizable.js',
             settings.STATIC_URL + 'wymeditor/wymeditor.placeholdereditor.js', # WYM
+            settings.STATIC_URL + 'cms/js/placeholder_editor_registry.js', # WYM
+            # settings.STATIC_URL + 'cms/js/plugins/cms.base.js', # WYM
             # 'js/wymeditor.placeholdereditor.js',
             # 'js/libs/jquery.ui.core.js',
             # 'js/placeholder_editor_registry.js',
