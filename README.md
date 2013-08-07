@@ -16,3 +16,9 @@ In development! Not working!
 Plese note that djangocms-text-wymeditor **does not yet** work. 
 
 If you can help get it working, please do.
+
+Alternatives
+------------
+
+An alternative would be to use [djangocms_wymeditor_plugin](https://github.com/wymeditor/djangocms_wymeditor_plugin),
+which is supported by the WYMeditor organization.
